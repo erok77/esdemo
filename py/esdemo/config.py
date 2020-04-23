@@ -1,20 +1,16 @@
-
-# %%
 ###
-# todo: >> enable the ssm as optional, include script to populate ssm from env, json, etc
-#       >> clean up app config
+#  o2o >> code sample dependency for getting env vars and app related info for structured logging
+#
 #
 
-
-import boto3
 import os
 import sys
+import logging
 
-from logging import getLogger
-logger = getLogger(__name__)
 
-from utils import cached_property
+from esdemo.utils import cached_property
 
+logger = logging.getLogger(__name__)
 
 
 __all__ = ['AppConfigContext', 'ConfigContext']
@@ -23,7 +19,7 @@ class AppConfigContext(object):
 
     @cached_property
     def code(self):
-        return os.getenv('CODE') if os.getenv('CODE') else 'xhs'
+        return os.getenv('CODE') if os.getenv('CODE') else 'o2o'
 
     @cached_property
     def build_version(self):
@@ -39,7 +35,7 @@ class AppConfigContext(object):
 
     @cached_property
     def name(self):
-        return os.getenv('NAME') if os.getenv('NAME') else '72Kings - k72'
+        return os.getenv('NAME') if os.getenv('NAME') else 'esdemo'
 
     @cached_property
     def stage(self):
@@ -57,7 +53,7 @@ class ConfigContext:
     app = AppConfigContext()
     stage = app.stage
     service = app.service
-    ssm_path = '/k72-%s/%s/' % (stage, service)
+#    ssm_path = '/o2o-%s/%s/' % (stage, service)
 #    ssm = boto3.client('ssm')
 
     def __init__(self):
@@ -66,7 +62,7 @@ class ConfigContext:
     def __iter__(self):
         pass
 
-
+    # handler to check AWS SSM for conf var
     '''
     def _get_ssm(self, key):
         try:
@@ -88,6 +84,7 @@ class ConfigContext:
         except Exception as e:
             logger.debug('{key}:: >> SSM FAILED WITH EXCEPTION, {e}'.format(key=key, e=e))
     '''
+
     def _get_environ(self, key):
         logger.debug('{key}:: >> TRYING OS.ENVIRON FOR KEY'.format(key=key))
         """ get env vars """
@@ -113,17 +110,11 @@ class ConfigContext:
             return False
 
     def __getattr__(self, key):
-#        value = self._get_local(key.upper())
-#        if value is not False:
-#            return value
-#        else:
-#            logger.debug('{key} NOT IN LOCAL __DICT__'.format(key=key.upper()))
         value = self._get_environ(key.upper())
         if value is not False:
             return value
         else:
             logger.debug('{key} FAILED OS.ENVIRON'.format(key=key.upper()))
-#        value = self._get_ssm(key.upper())
         if value is not False:
             return value
         else:
@@ -136,3 +127,13 @@ class ConfigContext:
                 key=key.upper(), value=value))
         except Exception as e:
             logger.debug('__setattr__ failed::' + e)
+
+def config_test():
+    conf = ConfigContext()
+    LOGLEVEL = conf.LOGLEVEL
+    STAGE = conf.STAGE
+    SERVICE = conf.SERVICE
+    print(LOGLEVEL, STAGE, SERVICE)
+
+if __name__ == "__main__":
+    config_test()

@@ -1,0 +1,225 @@
+{
+    "name": "esdemo.config",
+    "msg": "Issue finding key SERVICE",
+    "args": [],
+    "levelname": "DEBUG",
+    "levelno": 10,
+    "pathname": "/Users/eric77/dev/on2one/esdemo/py/esdemo/config.py",
+    "filename": "config.py",
+    "module": "config",
+    "exc_info": null,
+    "exc_text": null,
+    "stack_info": null,
+    "lineno": 121,
+    "funcName": "__getattr__",
+    "created": 1587612497.436446,
+    "msecs": 436.445951461792,
+    "relativeCreated": 182.89494514465332,
+    "thread": 4365325760,
+    "threadName": "MainThread",
+    "processName": "MainProcess",
+    "process": 44253
+}
+
+{
+    "@timestamp": "2020-04-23T04:37:13.521890",
+    "ecs.version": "1.5",
+    "event.module": "utils",
+    "log": {
+        "level": "ERROR",
+        "logger": "esdemo",
+        "origin": {
+            "file": {
+                "line": 95,
+                "name": "utils.py",
+                "fullpath": "/Users/eric77/dev/on2one/esdemo/py/esdemo/utils.py"
+            },
+            "function": "wrapper"
+        }
+    },
+    "event": "",
+    "event_args": {
+        "module": "utils",
+        "pathname": "/Users/eric77/dev/on2one/esdemo/py/esdemo/utils.py",
+        "funcName": "wrapper",
+        "lineno": 95,
+        "thread": "MainThread[4439762368]",
+        "pid": 47513,
+        "exc_info": "Traceback (most recent call last):\n  File \"/Users/eric77/dev/on2one/esdemo/py/esdemo/utils.py\", line 90, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/eric77/dev/on2one/esdemo/py/esdemo/__init__.py\", line 57, in zero_divide\n    1 / 0\nZeroDivisionError: division by zero\n"
+    },
+    "created_at": "2020-04-23T04:37:13.521962",
+    "message": "There was an exception in  zero_divide",
+    "process.pid": 47513,
+    "process.name": "esdemo",
+    "process.thread.id": 4439762368,
+    "process.thread.name": "MainThread",
+    "context": {}
+}
+
+{
+    "@timestamp": "2020-04-23T05:10:01.996373",
+    "ecs.version": "1.5",
+    "event": "",
+    "labels": {
+        "record": {
+            "name": "root",
+            "msg": "debug message",
+            "args": {
+                "extra": "test",
+                "event": "test2"
+            },
+            "levelname": "DEBUG",
+            "levelno": 10,
+            "pathname": "/Users/eric77/dev/on2one/esdemo/py/esdemo/__init__.py",
+            "filename": "__init__.py",
+            "module": "__init__",
+            "exc_info": null,
+            "exc_text": null,
+            "stack_info": null,
+            "lineno": 48,
+            "funcName": "loglevel_tests",
+            "created": 1587618601.993695,
+            "msecs": 993.6950206756592,
+            "relativeCreated": 59.438228607177734,
+            "thread": 4596532672,
+            "threadName": "MainThread",
+            "processName": "MainProcess",
+            "process": 49127,
+            "hostname": "aleph77"
+        }
+    },
+    "log": {
+        "level": "DEBUG",
+        "logger": "root",
+        "origin": {
+            "file": {
+                "line": 48,
+                "name": "__init__.py",
+                "fullpath": "/Users/eric77/dev/on2one/esdemo/py/esdemo/__init__.py"
+            },
+            "function": "loglevel_tests"
+        }
+    },
+    "event_args": {
+        "module": "__init__",
+        "pathname": "/Users/eric77/dev/on2one/esdemo/py/esdemo/__init__.py",
+        "funcName": "loglevel_tests",
+        "lineno": 48,
+        "thread": "MainThread[4596532672]",
+        "pid": 49127
+    },
+    "created_at": "2020-04-23T05:10:01.997241",
+    "message": "debug message",
+    "process.pid": 49127,
+    "process.name": "root",
+    "process.thread.id": 4596532672,
+    "process.thread.name": "MainThread",
+    "context": {}
+}
+
+
+{
+    "@timestamp": "2020-04-23T06:05:22.194397",
+    "ecs.version": "1.5",
+    "error": {
+        "stack_trace": {
+            "exc_info": "Traceback (most recent call last):\n  File \"/Users/eric77/dev/on2one/esdemo/py/esdemo/utils.py\", line 90, in wrapper\n    return func(*args, **kwargs)\n  File \"/Users/eric77/dev/on2one/esdemo/py/esdemo/__init__.py\", line 59, in zero_divide\n    1 / 0\nZeroDivisionError: division by zero\n"
+        }
+    },
+    "event": {
+        "created": "2020-04-23T06:05:22.194311",
+        "module": "utils"
+    },
+    "log": {
+        "level": "ERROR",
+        "logger": "esdemo",
+        "origin": {
+            "file": {
+                "line": 95,
+                "name": "utils.py",
+                "fullpath": "/Users/eric77/dev/on2one/esdemo/py/esdemo/utils.py"
+            },
+            "function": "wrapper"
+        }
+    },
+    "message": "There was an exception in  zero_divide",
+    "process": {
+        "pid": 52048,
+        "name": "esdemo",
+        "thread": {
+            "id": 4513396160,
+            "name": "MainThread"
+        }
+    }
+}
+
+
+
+{
+    "@timestamp": "2020-04-23T07:31:47.819748",
+    "ecs.version": "1.5",
+    "error": {
+        "stack_trace": {
+            "exc_info": null
+        }
+    },
+    "event": {
+        "created": "2020-04-23T07:31:47.817797",
+        "module": "__init__"
+    },
+    "labels": {
+        "REQUEST_ID": "0426e44f-ffcd-48db-84fd-60448a259156",
+        "REMOTE_ADDR": "127.0.0.1",
+        "REMOTE_USER": "-",
+        "REQUEST_METHOD": "PUT",
+        "REQUEST_URI": "http://127.0.0.1:8000/test",
+        "REQUEST_PATH": "/test",
+        "HTTP_HOST": "127.0.0.1:8000",
+        "HTTP_VERSION": "HTTP/1.1",
+        "HTTP_REFERER": "-",
+        "HTTP_USER_AGENT": "curl/7.54.0",
+        "time": "23/Apr/2020:03:31:47 -0400",
+        "duration": "0.031",
+        "bytes": "-",
+        "status": 200
+    },
+    "log": {
+        "level": "INFO",
+        "logger": "request_id",
+        "origin": {
+            "file": {
+                "line": 119,
+                "name": "__init__.py",
+                "fullpath": "/usr/local/lib/python3.7/site-packages/request_id/__init__.py"
+            },
+            "function": "write_log"
+        }
+    },
+    "message": "{'REQUEST_ID': '0426e44f-ffcd-48db-84fd-60448a259156', 'REMOTE_ADDR': '127.0.0.1', 'REMOTE_USER': '-', 'REQUEST_METHOD': 'PUT', 'REQUEST_URI': 'http://127.0.0.1:8000/test', 'REQUEST_PATH': '/test', 'HTTP_HOST': '127.0.0.1:8000', 'HTTP_VERSION': 'HTTP/1.1', 'HTTP_REFERER': '-', 'HTTP_USER_AGENT': 'curl/7.54.0', 'time': '23/Apr/2020:03:31:47 -0400', 'duration': '0.031', 'bytes': '-', 'status': 200}",
+    "process": {
+        "pid": 56431,
+        "name": "request_id",
+        "thread": {
+            "id": 4644152768,
+            "name": "MainThread"
+        }
+    }
+}
+
+
+{
+    "REQUEST_ID": "0426e44f-ffcd-48db-84fd-60448a259156",
+    "REMOTE_ADDR": "127.0.0.1",
+    "REMOTE_USER": "-",
+    "REQUEST_METHOD": "PUT",
+    "REQUEST_URI": "http: //127.0.0.1:8000/test",
+    "REQUEST_PATH": "/test",
+    "HTTP_HOST": "127.0.0.1:8000",
+    "HTTP_VERSION": "HTTP/1.1",
+    "HTTP_REFERER": "-",
+    "HTTP_USER_AGENT": "curl/7.54.0",
+    "time": "23/Apr/2020:03:31:47 -0400",
+    "duration": "0.031",
+    "bytes": "-",
+    "status": 200
+}
